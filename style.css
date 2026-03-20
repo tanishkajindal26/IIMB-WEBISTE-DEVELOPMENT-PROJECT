@@ -1,0 +1,505 @@
+/* ================= GLOBAL STYLES ================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --primary: #0a192f;
+    --secondary: #64ffda;
+    --light: #f5f7fa;
+    --dark: #1c1c1c;
+    --grey: #6c757d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--light);
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background: var(--primary);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    color: white;
+    font-weight: 600;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 400;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--secondary);
+}
+
+/* ================= HERO ================= */
+.hero {
+    height: 90vh;
+    background: linear-gradient(to right, #0a192f, #172a45);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+}
+
+.hero span {
+    color: var(--secondary);
+}
+
+.hero p {
+    margin: 15px 0;
+    color: #ccd6f6;
+}
+
+.hero-buttons {
+    margin-top: 20px;
+}
+
+/* ================= BUTTONS ================= */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: var(--secondary);
+    color: black;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-right: 10px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    border: 1px solid var(--secondary);
+    color: var(--secondary);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn-outline:hover {
+    background: var(--secondary);
+    color: black;
+}
+
+/* ================= SECTIONS ================= */
+.section {
+    padding: 80px 60px;
+}
+
+.section.alt {
+    background: white;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.center {
+    text-align: center;
+}
+
+/* ================= GRID ================= */
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+/* ================= CARDS ================= */
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.highlight {
+    background: var(--primary);
+    color: white;
+}
+
+.highlight h3,
+.highlight p,
+.highlight strong {
+    color: white;
+}
+
+/* ================= CTA ================= */
+.cta {
+    background: var(--primary);
+    color: white;
+    padding: 80px 20px;
+}
+
+/* ================= FOOTER ================= */
+footer {
+    background: #020c1b;
+    color: #ccc;
+    padding: 40px 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+footer h3, footer h4 {
+    color: white;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: var(--secondary);
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .section {
+        padding: 50px 20px;
+    }
+}
+
+/* ================= TIMELINE ================= */
+.timeline-section {
+    padding: 60px 20px;
+    background: var(--light);
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* vertical line */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background: var(--secondary);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+}
+
+/* items */
+.timeline-item {
+    padding: 20px 40px;
+    position: relative;
+    width: 50%;
+}
+
+/* left side */
+.timeline-item:nth-child(odd) {
+    left: 0;
+}
+
+/* right side */
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+/* circles */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    right: -8px;
+    background: var(--secondary);
+    border-radius: 50%;
+    top: 30px;
+    z-index: 1;
+}
+
+/* right side circle fix */
+.timeline-item:nth-child(even)::before {
+    left: -8px;
+}
+
+/* content box */
+.timeline-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* responsive */
+@media(max-width: 768px) {
+
+    .timeline::after {
+        left: 20px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 60px;
+        padding-right: 20px;
+    }
+
+    .timeline-item::before {
+        left: 15px;
+    }
+
+    .timeline-item:nth-child(even) {
+        left: 0%;
+    }
+}
+
+/* ================= EXPERIENCE ================= */
+.experience-card {
+    background: white;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 20px rgba(0,0,0,0.08);
+}
+
+.experience-card h2 {
+    margin-bottom: 5px;
+}
+
+.duration {
+    color: var(--secondary);
+    font-weight: 500;
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.experience-grid h3 {
+    margin-bottom: 10px;
+}
+
+.experience-grid ul {
+    padding-left: 20px;
+}
+
+.experience-grid li {
+    margin-bottom: 8px;
+}
+/* ================= STATS ================= */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.stat-card {
+    background: var(--primary);
+    color: white;
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.stat-card h2 {
+    font-size: 2rem;
+    color: var(--secondary);
+}
+
+/* ================= ACHIEVEMENTS ================= */
+.achievement-card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.achievement-card:hover {
+    transform: translateY(-5px);
+}
+
+.achievement-card h3 {
+    margin-bottom: 10px;
+}
+/* ================= CONTACT ================= */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.contact-info p {
+    margin: 10px 0;
+}
+
+/* FORM */
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border: 1px solid var(--secondary);
+}
+
+/* RESPONSIVE */
+@media(max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* ================= SKILLS ================= */
+.skills-grid {
+    margin-top: 20px;
+}
+
+.skill {
+    margin-bottom: 15px;
+}
+
+.skill p {
+    margin-bottom: 5px;
+}
+
+.skill-bar {
+    width: 100%;
+    height: 8px;
+    background: #ddd;
+    border-radius: 5px;
+}
+
+.skill-bar span {
+    display: block;
+    height: 100%;
+    background: var(--secondary);
+    border-radius: 5px;
+}
+.center {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.achievement-card p {
+    margin: 5px 0;
+}
+
+/* FORCE FIX FOR HIGHLIGHT CARDS */
+.achievement-card.highlight {
+    background: var(--primary) !important;
+    color: white !important;
+}
+
+.achievement-card.highlight h3,
+.achievement-card.highlight p,
+.achievement-card.highlight strong {
+    color: white !important;
+}
